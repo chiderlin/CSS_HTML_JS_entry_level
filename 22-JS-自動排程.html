@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>JS-自動排程</title>
+<script type="text/javascript">
+
+/*
+	方法一 : window.setTimeout(countdown, 1000), 
+	只會執行一次，如果要執行多次就必須code在countdown。
+
+*/  
+/*
+var timer;
+function init(){
+	timer = document.getElementById("timer");
+	window.setTimeout(countdown, 1000); // 1000毫秒 => 1秒 // 一秒之後執行countdown func
+	
+}
+
+function countdown(){
+	timer.innerHTML = timer.innerHTML - 1;
+	if (timer.innerHTML>0){ // 還沒0繼續倒數
+		window.setTimeout(countdown, 1000); //這樣就會循環跑倒數
+	}else{ // 倒數到0 => 網頁跳轉
+		document.location = "http://www.yahoo.com.tw/";
+	}
+}
+*/
+
+/*
+	方法二 : window.setInterval(countdown, 1000),
+	每秒(因code1000毫秒)會自動執行一次，
+	countdown裡就不需在code一樣的程式碼，比較方便。
+*/ 
+var timer;
+function init(){
+	timer = document.getElementById("timer");
+	window.setInterval(countdown, 1000); // 設定一秒 => 所以每秒鐘會自動執行一次，會不斷執行
+}
+function countdown(){
+	timer.innerHTML = timer.innerHTML - 1;
+	if (timer.innerHTML > 0){
+	
+	}else{
+		document.location = "http://youtube.com/"
+	}
+}
+
+
+
+</script>
+</head>
+<body onload="init();">
+	<span id="timer">5</span>
+</body>
+</html>

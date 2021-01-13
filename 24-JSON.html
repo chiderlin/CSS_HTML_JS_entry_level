@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<title>JSON 基礎教學</title>
+<script type="text/javascript">
+// JSON: JavaScript Object Notation (JavaScript 物件表示法)
+
+/* 原始物件寫法
+	var point = new Object();
+	point.x = 3;
+	point.y = 4;
+	point.get = function(){
+		alert(this.x+","+this.y);
+	}
+*/
+// JSON物件寫法
+var point={
+	"x":3,
+	"y":4,
+	"get":function(){
+		alert(this.x+","+this.y);
+	}
+};
+//point.get();
+//alert(point.x);
+
+/*
+	物件結構與JSON格式字串轉換，使用內建JSON物件中的方法。
+		使用JSON.stringify(物件); 將物件轉換成JSON格式的字串，但會忽略函式的部分
+		使用JSON.parse(JSON 格式字串); 將字串轉換成物件結構
+
+*/
+
+// console.log(point); 物件
+var jsonStr = JSON.stringify(point);
+console.log(jsonStr); // 物件字串化  字串化就不行這樣=> jsonStr.x
+var plainObj = JSON.parse(jsonStr);
+console.log(plainObj); // 把JSON字串轉換回物件化
+alert(plainObj.x);
+</script>
+</head>
+<body></body>
+</html>

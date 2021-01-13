@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>HTML DOM</title>
+<script type="text/javascript">
+/*
+	DOM : Document Object Model. 文件物件模型
+	就是把HTML文件內的各個標籤(包括文字、圖片等等)都定義成物件，
+	這些物件最終形成一個樹狀結構。
+*/
+
+
+// 獲得window解析度
+//alert(window.screen.width+"x"+window.screen.height);
+
+// 按change按鈕後，這裡的func就會取代body裡的東西，但實用性不高
+/*
+function change(){
+	window.document.body.innerHTML = "Hello World";
+}
+*/
+// 比較常見的用法如下 =>修改一部分內容而不是整個body
+function change(){
+	var emotionObj = window.document.getElementById("emotion");
+	emotionObj.innerHTML = "bad";
+	emotionObj.style.color = "red"; // 修改css
+	emotionObj.style.fontWeight = "bold";
+	
+	var actionObj = window.document.getElementById("action");
+	actionObj.innerHTML = "stay at home and get some sleep!?";
+	actionObj.style.color = "blue";
+	actionObj.style.fontWeight = "bold";
+	//actionObj.style.display = "none"; //隱藏字的功能
+}
+
+
+</script>
+</head>
+<body>
+	<div>Today is a <span id="emotion">good</span> day! Let's <span id="action">go see a movie</span>.</div>
+	<button onclick="change();">Change</button>
+</body>
+</html>

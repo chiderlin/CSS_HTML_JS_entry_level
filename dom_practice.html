@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice - DOM</title>
+<script type="text/javascript">
+function toggleMenu(num){
+/*
+	var menu = document.getElementById("menu");
+	if (menu.style.display=="none"){
+		menu.style.display = "block";
+	}else{
+		menu.style.display = "none";
+	}
+*/
+	var menu = document.getElementById("menu-"+num);
+	menu.classList.toggle("hide");
+
+}
+
+</script>
+<style>
+/* CSS選擇器 */
+
+.hide{display:none}
+
+</style>
+</head>
+<body>
+	<div onclick="toggleMenu(1);">選單範例1</div>
+	<ul id="menu-1">
+		<li>範例項目1</li>
+		<li>範例項目2</li>
+		<li>範例項目3</li>
+	</ul>
+	<div onclick="toggleMenu(2);">選單範例2</div>
+	<ul id="menu-2">
+		<li>範例項目4</li>
+		<li>範例項目5</li>
+		<li>範例項目6</li>
+	</ul>
+	<div onclick="toggleMenu(3);">選單範例3</div>
+	<ul id="menu-3">
+		<li>範例項目7</li>
+		<li>範例項目8</li>
+		<li>範例項目9</li>
+	</ul>
+	<div onclick="toggleMenu(4);">選單範例4</div>
+	<ul id="menu-4">
+		<li>範例項目10</li>
+		<li>範例項目11</li>
+		<li>範例項目12</li>
+	</ul>
+
+
+</body>
+</html>

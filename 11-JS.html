@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Javascript</title>
+<script type="text/javascript">
+// if 判斷式
+/*
+var money=prompt("要提多少錢?","");
+if(money>30000){
+	alert("不能提那麼多");
+}else{
+	alert("錢給你")
+}
+*/
+/*
+var n=prompt("請輸入數字","");
+if(n>500){
+	alert(n+">500");
+}else if(n>300){
+	alert(n+">300");
+}else{
+	alert(n+"<=300");
+}
+*/
+// 範例
+/*
+var n1=prompt("請輸入數字","");
+var n2=prompt("請輸入數字","");
+// 資料型態轉換:把字串=>數字
+n1 = Number(n1); //Number(資料)
+n2 = Number(n2);
+var op = prompt("請輸入運算:+,-,*,/","");
+if (op=="+"){
+	result = n1+n2;
+}else if (op=="-"){
+	result = n1-n2;
+}else if (op=="*"){
+	result = n1*n2;
+}else if (op=="/"){
+	result = n1/n2;
+}else{
+	result = "不合法數字";
+}
+alert(result);
+*/
+
+
+// 作業 ==> 如果使用者輸入了字母
+var n1=prompt("1.請輸入數字","");
+n1 = Number(n1);
+var a = isNaN(n1);
+var result;
+
+if (a == true){
+	result = "只能輸入數字!";
+	alert(result);
+}else if(a == false){
+	var n2=prompt("2.請輸入數字","");
+	n2 = Number(n2);
+	var b = isNaN(n2);
+	if (b==true){
+		result = "只能輸入數字";
+		alert(result);
+	}else if (b==false){
+		var op = prompt("請輸入運算:+,-,*,/","");
+		if (op == "+"){
+			result = n1+n2; 
+		}else if (op == "-"){
+			result = n1-n2;
+		}else if (op == "*"){
+			result = n1*n2;
+		}else if (op == "/"){
+			result = n1/n2;
+		}else{
+			result="不合法的運算符號";
+		}
+		alert(result);
+	}
+}
+</script>
+</head>
+
+<body>
+</body>
+</html>

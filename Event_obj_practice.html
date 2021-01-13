@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Event Object Practice</title>
+<script type="text/javascript">
+/*
+function init(){
+	var click = document.getElementById("click");
+	var handler = function(){
+		alert("OK..");
+	}
+	click.addEventListener("click", handler);
+}
+*/
+
+function init(){
+
+	var click = document.getElementById("click");
+	var handler = function(e){
+		alert(e.clientX+","+e.clientY);
+	}
+	click.addEventListener('click', handler);
+	
+	/* 嘗試用id 取得onmouseover & onmouseout效果 
+		失敗!!!!
+	var over = document.getElementById("over");
+	var out = document.getElementById("out");
+	
+	var handler_movein = function(element){
+		element.style.color = "red";
+	}
+	var handler_moveout = function(element){
+		element.style.color = "black";
+	}
+	over.addEventListener("mouseover", handler_movein);
+	out.addEventListener("mouseout", handler_moveout);
+	*/
+}
+
+function over(e){
+	e.style.color = "red";
+}
+function out(e){
+	e.style.color = "black";
+}
+
+</script>
+</head>
+<body onload="init();">
+	<div><h3>表單範例</h3></div>
+	<ul>
+		<li id="over">項目一</li>
+		<li onmouseover="over(this);" onmouseout="out(this);">項目二</li>
+		<li onmouseover="over(this);" onmouseout="out(this);">項目三</li>
+	</ul>
+	
+	<button id="click">click</button>
+	
+</body>
+
+</html>

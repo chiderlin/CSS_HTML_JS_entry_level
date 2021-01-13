@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>事件物件Event Object</title>
+<script type="text/javascript">
+function init(){
+	
+	var btn = document.getElementById("btn");
+	var handler = function(e){
+		alert(e.clientX+","+e.clientY);
+	}
+	btn.addEventListener('click', handler);
+	/* 
+	使用模式說明
+		1. 使用者點擊按鈕，觸發click事件。
+		2. 瀏覽者主動收集和事件有關的資訊，並製造出Event Object 事件物件。
+		   => var eventObj = 事件物件;
+		3. 呼叫已經註冊的事件處理器(事件處理函式)
+		   handler(eventObj);
+		   
+		  所以要取得滑鼠物件 => 把eventObj參數加在function上
+	*/
+	
+	
+	//取得鍵盤物件 =>會出現鍵盤相對應代表的CODE : 可以製作鍵盤操作的網頁
+	document.addEventListener("keydown", function(e){ // 匿名函式: 用來直接當事件處理器
+		alert(e.keyCode);
+	});
+	
+}
+
+
+</script>
+</head>
+
+<body onload="init();">
+	<button id="btn">Click</button>
+</body>
+</html>

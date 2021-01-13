@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Event 事件處理-方法一</title>
+<script type="text/javascript">
+// 我發現這兩種函式寫法是相同的 只是看你要不要用var定義出來
+/*  
+function over(element){
+	element.style.color = "red";
+}
+function out(element){
+	element.style.color = "black";
+}
+*/
+
+var over = function(element){
+	element.style.color = "red";
+}
+var out = function(element){
+	element.style.color = "black";
+}
+
+</script>
+</head>
+<body>
+	<button onclick="alert('Clicked...');">Click</button>
+	<span onmouseover="over(this);" onmouseout="out(this);">test</span>
+	<div onmouseover="over(this);" onmouseout="out(this);">div 換色測試</div>
+</body>
+</html>

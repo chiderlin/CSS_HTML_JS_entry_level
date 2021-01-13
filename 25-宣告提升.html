@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>宣告提升 Hoisting</title>
+<script type="text/javascript">
+// 這樣OK
+/* 
+x = 10;
+alert(x);
+var x; // 放到最後一行宣告，仍然能執行成功 => 因宣告提升
+*/
+// 這樣就會出錯
+/*
+alert(x);
+var x = 10;
+*/
+// 這樣OK
+/*
+test();
+function test(){
+	alert("Hello");
+}
+*/
+
+// 這樣就會出錯
+/*
+test();
+var test = function(){
+	alert("Hello");
+};
+*/
+
+</script>
+</head>
+<body></body>
+</html>

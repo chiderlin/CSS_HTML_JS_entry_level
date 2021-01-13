@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Event 事件處理-方法二</title>
+<script type="text/javascript">
+// 用Javascript的程式，動態註冊事件處理器
+function init(){
+	var btn = document.getElementById("btn");
+	/* 比較舊的打法 但還是可以用
+	btn.onclick = function(){
+		alert('Clicked...');
+	}
+	*/
+	// 新的正式用法
+	var handler = function(){ // 準備一個事件處理器(對應事件函式)
+		alert("Clicked......");
+	}
+	
+	// 把btn物件與handler做連結
+	btn.addEventListener("click" /*事件名稱*/, handler);
+}
+
+</script>
+</head>
+<body onload="init();">
+	<button id="btn">Click</button>
+</body>
+</html>

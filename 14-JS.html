@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>JS函式教學</title>
+<script type="text/javascript">
+// 內建函式
+//alert("Hello World");
+
+// 函式的基礎
+// 設計階段
+/*
+function add(n1, n2){
+	// 函式本體
+	alert(n1+n2);
+}
+// 呼叫/使用階段
+add(2,3);
+*/
+/*
+function test(n1, n2){
+	alert(n1+n2);
+	return n1+n2;
+}
+var result=test(3,4)*test(10,20);
+alert(result);
+*/
+
+// 整合範例
+var sum = 0;
+function add(max){
+	for (var i=1;i<=max;i++){
+		sum += i;
+	}
+	return sum;
+}
+var total = add(100);
+alert(total);
+
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>
